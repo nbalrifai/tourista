@@ -6,10 +6,16 @@
 <br>
 <div class="row">
   {% for destination in destinations %}
+  	<div class="card col-lg-4 col-md-6 col-xs-12 text-danger" style="width: 18rem;">
+ 	 <img class="card-img-top" src="{{destination.pretty_picture.url}}"/100px180/ alt="Card image cap">
+ 	   <div class="card-body">
+ 	     <h5 class="card-title">{{destination.name}}</h5>
+         <p class="card-text">{{destination.activities}}</p>
+    		<a href="#" class="btn btn-primary">Go somewhere</a>
+       </div>
+		
+	</div>
   <a href="{% url 'destination-detail' destination.id %}">
-    <img src="{{destination.pretty_picture.url}}" />
-    <p>{{destination.name}}</p>
-    <p>{{destination.activities}}</p>
   </a>
   {% endfor %}
 </div>
